@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Janken</title>
+</head>
+
+<body>
+  <p><h1>Lec02 GET!</h1></p>
+  
+  <div th:if="${nameResult}">
+    Hi [[${nameResult}]]
+  </div>
+
+  <div th:if="${YouResult}">
+    あなたの手 [[${YouResult}]]
+  </div>
+
+  <div th:if="${CpuResult}">
+    相手の手 [[${CpuResult}]]
+  </div>
+  <div th:if="${YouResult}">
+    あなたの手 [[${nameResult}]]
+  </div>
+
+
+
+</body>
+
+</html>
