@@ -10,7 +10,7 @@ public class JankenCpu {
   // コンストラクタ
   public JankenCpu(int me) {
     Random rand = new Random();
-    this.cpu = rand.nextInt(3)-1;
+    this.cpu = rand.nextInt(2)-1;
     this.me=me;
     //あいこ
     if(this.me==this.cpu){this.result=0;}
@@ -21,13 +21,19 @@ public class JankenCpu {
    
   }
 
-  public int getresult() {
-    return this.result;
+  public ArrayList<Double> getNumList() {
+    return numList;
   }
 
-  public int getcpu() {
-    return this.cpu;
+  public void setNumList(ArrayList<Double> numList) {
+    this.numList = numList;
   }
 
- 
+  public double getAve() {
+    return ave;
+  }
+
+  public void setAve(double ave) {
+    this.ave = ave;
+  }
 }

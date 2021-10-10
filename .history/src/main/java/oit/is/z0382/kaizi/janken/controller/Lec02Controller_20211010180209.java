@@ -41,11 +41,11 @@ public class Lec02Controller {
   @GetMapping("gu")
   public String gu(ModelMap model) {
    String Hand="グー";
-   String hand="";
-   String moji="";
+   String hand;
+   String moji;
     model.addAttribute("YouResult", Hand);
     JankenCpu X = new JankenCpu(1);
-    int cpu=X.getcpu();
+    int cpu=X.getcp();
     if(cpu==1){hand="グー";}
     else if(cpu==0){hand="チョキ";}
     else if(cpu==-1){hand="パー";}
@@ -63,8 +63,8 @@ public class Lec02Controller {
   @GetMapping("ch")
   public String ch(ModelMap model) {
   String  Hand="チョキ";
-  String hand="";
-  String moji="";
+  String hand;
+  String moji;
    model.addAttribute("YouResult", Hand);
    JankenCpu X = new JankenCpu(0);
    int cpu=X.getcpu();
@@ -85,8 +85,8 @@ public class Lec02Controller {
   @GetMapping("pa")
   public String pa(ModelMap model) {
   String  Hand="パー";
-  String hand="";
-  String moji="";
+  String hand;
+  String moji;
    model.addAttribute("YouResult", Hand);
    JankenCpu X = new JankenCpu(-1);
    int cpu=X.getcpu();

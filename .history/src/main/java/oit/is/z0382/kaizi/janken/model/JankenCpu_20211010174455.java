@@ -10,7 +10,7 @@ public class JankenCpu {
   // コンストラクタ
   public JankenCpu(int me) {
     Random rand = new Random();
-    this.cpu = rand.nextInt(3)-1;
+    this.cpu = rand.nextInt(2)-1;
     this.me=me;
     //あいこ
     if(this.me==this.cpu){this.result=0;}
