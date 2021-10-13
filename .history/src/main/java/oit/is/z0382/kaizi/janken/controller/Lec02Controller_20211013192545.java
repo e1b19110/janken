@@ -24,8 +24,8 @@ public class Lec02Controller {
   private Room room;
 
 
- /* @GetMapping
-  public String lec02() {
+  @GetMapping
+  /*public String lec02() {
     return "lec02.html";
   }*/
 
