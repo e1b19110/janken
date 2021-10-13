@@ -1,9 +1,6 @@
 package oit.is.z0382.kaizi.janken.controller;
 
-import java.security.Principal;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import oit.is.z0382.kaizi.janken.model.JankenCpu;
-import oit.is.z0382.kaizi.janken.model.Room;
 
 
 
@@ -23,11 +19,11 @@ public class Lec02Controller {
   @Autowired
   private Room room;
 
-
- /* @GetMapping
+  
+  @GetMapping
   public String lec02() {
     return "lec02.html";
-  }*/
+  }
 
 
 
@@ -110,13 +106,13 @@ public class Lec02Controller {
    return "lec02.html";
   }
 
-  @GetMapping
+  @GetMapping("entry")
   public String entry(Principal prin, ModelMap model) {
     String loginUser = prin.getName();
     this.room.addUser(loginUser);
     model.addAttribute("room", this.room);
 
-    return "lec02.html";
+    return "sample37.html";
   }
  
 

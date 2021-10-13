@@ -24,10 +24,10 @@ public class Lec02Controller {
   private Room room;
 
 
- /* @GetMapping
+  @GetMapping
   public String lec02() {
     return "lec02.html";
-  }*/
+  }
 
 
 
@@ -110,7 +110,7 @@ public class Lec02Controller {
    return "lec02.html";
   }
 
-  @GetMapping
+  @GetMapping("entry")
   public String entry(Principal prin, ModelMap model) {
     String loginUser = prin.getName();
     this.room.addUser(loginUser);

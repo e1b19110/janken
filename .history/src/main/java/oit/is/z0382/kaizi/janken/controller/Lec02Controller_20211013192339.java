@@ -24,10 +24,10 @@ public class Lec02Controller {
   private Room room;
 
 
- /* @GetMapping
+  @GetMapping
   public String lec02() {
     return "lec02.html";
-  }*/
+  }
 
 
 
@@ -40,10 +40,10 @@ public class Lec02Controller {
    * @return 
    */
   @PostMapping
-  public String lec02(@RequestParam String name, ModelMap model) {
+  /*public String lec02(@RequestParam String name, ModelMap model) {
     model.addAttribute("nameResult", name);
     return "lec02.html";
-  }
+  }*/
 
 
   @GetMapping("gu")
