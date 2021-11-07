@@ -1,46 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/schema/security">
 
 <head>
   <meta charset="utf-8">
-  <title>Janken</title>
+  <title>janken</title>
 </head>
 
 <body>
-    
+  <h1>Authorized! <span sec:authentication="name"></span>
+  </h1>
   <a href="/logout">ログアウト</a>
-  <p><h1>Lec02 GET!</h1></p>
 
-  <div th:if="${room}">
-    DI利用
-    <ul>
-      <li th:each="user : ${room.users}">[[${user}]]</li>
-    </ul>
+  <h2>Online Chamber</h2>
+
+
+
+
+  <div th:each="User,stat:${Users}">
+    <tr>
+      <td>Index:[[${stat.index}]]</td>
+      <td>ID:[[${User.id}]]</td>
+      <td>ユーザ名:[[${User.name}]]</td>
+    </tr>
   </div>
 
- 
-  <a href="/lec02/gu">グー</a>
-  <a href="/lec02/ch">チョキ</a>
-  <a href="/lec02/pa">パー</a>
 
-
-  <div th:if="${nameResult}">
-    Hi [[${nameResult}]]
-  </div>
-
-  <div th:if="${YouResult}">
-    あなたの手 [[${YouResult}]]
-  </div>
-
-  <div th:if="${CpuResult}">
-    相手の手 [[${CpuResult}]]
-  </div>
   
-  <div th:if="${jankenResult}">
-    結果 [[${jankenResult}]]
-  </div>
-
-
 
 </body>
 
