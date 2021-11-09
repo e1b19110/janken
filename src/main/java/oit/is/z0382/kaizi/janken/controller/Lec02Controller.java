@@ -18,6 +18,8 @@ import oit.is.z0382.kaizi.janken.model.JankenCpu;
 /*import oit.is.z0382.kaizi.janken.model.Room;*/
 import oit.is.z0382.kaizi.janken.model.User;
 import oit.is.z0382.kaizi.janken.model.UserMapper;
+import oit.is.z0382.kaizi.janken.model.Match;
+import oit.is.z0382.kaizi.janken.model.MatchMapper;
 
 
 
@@ -28,6 +30,9 @@ import oit.is.z0382.kaizi.janken.model.UserMapper;
 public class Lec02Controller {
   @Autowired
   UserMapper UserMapper;
+  @Autowired
+  MatchMapper MatchMapper;
+
 
 
  /* @GetMapping
@@ -128,7 +133,9 @@ public class Lec02Controller {
   @GetMapping
   public String sample45(ModelMap model) {
     ArrayList<User> Users = UserMapper.selectAllUser();
+    ArrayList<Match> Matches = MatchMapper.selectAllMatch();
     model.addAttribute("Users", Users);
+    model.addAttribute("Matches", Matches);
     return "lec02.html";
   }
 

@@ -14,8 +14,6 @@
   <h2>Online Chamber</h2>
 
 
-
-
   <div th:each="User,stat:${Users}">
     <tr>
       <td>Index:[[${stat.index}]]</td>
@@ -23,6 +21,18 @@
       <td>ユーザ名:[[${User.name}]]</td>
     </tr>
   </div>
+
+  <div th:each="Match,stat:${Matches}">
+    <tr>
+      <td>Index:[[${stat.index}]]</td>
+      <td>ID:[[${Match.id}]]</td>
+      <td>ユーザ名:[[${Match.user1}]]</td>
+      <td>ユーザ名:[[${Match.user2}]]</td>
+      <td>手:[[${Match.user1Hand}]]</td>
+      <td>手:[[${Match.user2Hand}]]</td>
+    </tr>
+  </div>
+
 
 
   
