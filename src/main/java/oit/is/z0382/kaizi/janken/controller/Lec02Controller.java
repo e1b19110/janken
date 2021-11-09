@@ -1,18 +1,26 @@
 package oit.is.z0382.kaizi.janken.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import oit.is.z0382.kaizi.janken.model.JankenCpu;
-import oit.is.z0382.kaizi.janken.model.Room;
+/*import oit.is.z0382.kaizi.janken.model.Room;*/
+import oit.is.z0382.kaizi.janken.model.User;
+import oit.is.z0382.kaizi.janken.model.UserMapper;
+import oit.is.z0382.kaizi.janken.model.Match;
+import oit.is.z0382.kaizi.janken.model.MatchMapper;
+
 
 
 
@@ -21,7 +29,10 @@ import oit.is.z0382.kaizi.janken.model.Room;
 @RequestMapping("/lec02")
 public class Lec02Controller {
   @Autowired
-  private Room room;
+  UserMapper UserMapper;
+  @Autowired
+  MatchMapper MatchMapper;
+
 
 
  /* @GetMapping
@@ -110,14 +121,24 @@ public class Lec02Controller {
    return "lec02.html";
   }
 
-  @GetMapping
+  /*@GetMapping
   public String entry(Principal prin, ModelMap model) {
     String loginUser = prin.getName();
     this.room.addUser(loginUser);
     model.addAttribute("room", this.room);
 
     return "lec02.html";
+  }*/
+
+  @GetMapping
+  public String sample45(ModelMap model) {
+    ArrayList<User> Users = UserMapper.selectAllUser();
+    ArrayList<Match> Matches = MatchMapper.selectAllMatch();
+    model.addAttribute("Users", Users);
+    model.addAttribute("Matches", Matches);
+    return "lec02.html";
   }
- 
+
+
 
   }

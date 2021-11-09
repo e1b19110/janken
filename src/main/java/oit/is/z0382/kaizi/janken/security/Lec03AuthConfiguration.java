@@ -21,7 +21,7 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
 
     // 平文のパスワードをエンコーダにかけてハッシュ化し，"user1"と関連付けている．ロール名は"USER"
     // プログラム中に素のパスワードが含まれることになるので望ましくない
-    auth.inMemoryAuthentication().withUser("hon").password(passwordEncoder().encode("book")).roles("USER");
+    auth.inMemoryAuthentication().withUser("ほんだ").password(passwordEncoder().encode("book")).roles("USER");
 
     // $ sshrun htpasswd -nbBC 10 admin adm1n
     // htpasswdでBCryptエンコードを行った後の文字列をパスワードとして指定している．
@@ -48,5 +48,9 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
     http.authorizeRequests().antMatchers("/lec02/**").authenticated();
     // Spring Securityの機能を利用してログアウト．ログアウト時は http://localhost:8000/ に戻る
     http.logout().logoutSuccessUrl("/");
+  
+    http.csrf().disable(); http.headers().frameOptions().disable();
+
   }
+
 }
